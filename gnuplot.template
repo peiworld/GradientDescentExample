@@ -1,0 +1,20 @@
+set terminal postscript enhanced dashed lw 2 "Arial" 24
+set output "$dataset_filename.ps"  # same name as the .gp file
+set xlabel "X"
+set ylabel "Y"
+set grid
+
+# Line width of the axes
+set border linewidth 1.5
+
+# Input file contains comma-separated values fields
+set datafile separator ","
+
+# Line styles
+set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2
+set style line 2 linecolor rgb '#dd181f' linetype 1 linewidth 2
+
+# define the function f(x)
+f(x)=$m*x+$b
+
+plot "$dataset_filename.txt" using 1:2 notitle with points, f(x) notitle with lines linestyle 1
