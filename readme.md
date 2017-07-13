@@ -20,10 +20,19 @@ Using these parameters a gradient descent search is executed on a sample data se
 <img src="https://github.com/mattnedrich/GradientDescentExample/blob/master/gradient_descent_example.gif" width="580">
 
 ### Execution
-To run the example, simply run the `gradient_descent_example.py` file using Python
+To run the example, you need to generate some sample datasets
+```
+./generate_examples.sh
+```
+OR if you want to generate 100 random data points in myDataset/100_samples.txt
+```
+python generate_new_dataset.py 100 1.234 432.1
+```
+
+Then, simply run the `gradient_descent_example.py` file using Python
 
 ```
-python gradient_descent_example.py
+python gradient_descent_example.py myDataset/100_samples.txt 1000
 ```
 
 The output will look like this
@@ -32,4 +41,9 @@ The output will look like this
 Starting gradient descent at b = 0, m = 0, error = 5565.10783448
 Running...
 After 1000 iterations b = 0.0889365199374, m = 1.47774408519, error = 112.614810116
+```
+
+If you have gnuplot and texlive package installed, you can plot all the graphs in myDataset folder
+```
+./generatePlot.sh 100_samples.gp
 ```
