@@ -67,8 +67,8 @@ def generateNewDataset(params):
             Y=computeY(X, params.m, params.b)
             Y=Y+random.randint(params.r_start, params.r_end)
 
-            slope= (Y-pre_Y)/(X-pre_X)
-            print X, Y, slope
+            #slope= (Y-pre_Y)/(X-pre_X)
+            #print X, Y, slope
     
             f.write(str(X)+","+str(Y)+"\n")
     f.close()
